@@ -3,114 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayantha Textile | Elegant Saree Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Jayantha Textile | Saree Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* මූලික සැකසුම් */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Portfolio style එකට ගැලපෙන CSS */
         :root {
-            --primary-maroon: #800020;
-            --rose-gold: #b76e79;
-            --white: #ffffff;
-            --light-grey: #f5f5f5;
-            --dark-grey: #333333;
-            --whatsapp-green: #25d366;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Poppins', sans-serif;
+            --primary: #800020; /* Maroon */
+            --accent: #b76e79;  /* Rose Gold */
+            --bg: #ffffff;
+            --text: #333;
         }
 
-        body { font-family: var(--font-body); background-color: var(--white); color: var(--dark-grey); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* Header */
-        .header { background: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
-        .logo { font-family: var(--font-heading); font-size: 2rem; color: var(--primary-maroon); text-decoration: none; font-weight: bold; }
-
-        /* Hero Section */
-        .hero { 
-            height: 60vh; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1610189012906-4f4e5e9b2e2a?w=1200') center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-        }
-        .hero-title { font-size: 3rem; font-family: var(--font-heading); margin-bottom: 10px; }
-
-        /* Saree Grid */
-        .collections { padding: 60px 0; background: var(--light-grey); }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: var(--text); }
         
-        .saree-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-        .saree-card:hover { transform: translateY(-10px); }
-        .saree-image img { width: 100%; height: 450px; object-fit: cover; }
-        
-        .saree-details { padding: 20px; text-align: center; }
-        .saree-name { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px; }
-        .saree-price { font-weight: bold; color: var(--primary-maroon); font-size: 1.2rem; margin-bottom: 20px; }
-
-        /* WhatsApp Button */
-        .whatsapp-btn { 
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            background: var(--whatsapp-green); color: white; padding: 12px 25px; 
-            border-radius: 50px; text-decoration: none; font-weight: 500; transition: 0.3s;
+        /* Navigation */
+        nav { 
+            background: white; padding: 20px; display: flex; justify-content: space-between; 
+            align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
         }
-        .whatsapp-btn:hover { background: #128c7e; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); font-weight: bold; }
 
-        /* Footer */
-        footer { background: var(--dark-grey); color: white; padding: 40px 0; text-align: center; }
+        /* Hero Section - මේක තමයි සයිට් එක ලස්සන කරන්නේ */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1610030469618-d08914619946?w=1200') center/cover;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 0; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; margin: 20px 0; }
+
+        /* Product Grid */
+        .container { max-width: 1200px; margin: 50px auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { 
+            background: white; border-radius: 20px; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 400px; object-fit: cover; }
+        
+        .content { padding: 25px; text-align: center; }
+        .price { color: var(--primary); font-size: 1.5rem; font-weight: 600; margin: 10px 0; }
+
+        .btn-whatsapp {
+            display: inline-block; background: #25d366; color: white; padding: 12px 25px; 
+            border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s;
+        }
+        .btn-whatsapp:hover { background: #128c7e; transform: scale(1.05); }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">Jayantha Textile</a>
-        </div>
-    </header>
+    <nav>
+        <div class="logo">Jayantha Textile</div>
+    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Exclusive Saree Collection</h1>
-            <p>ඔබටම අනන්‍ය වූ අලංකාර සාරි විලාසිතා</p>
-        </div>
-    </section>
+    <div class="hero">
+        <h1>Elegant Saree Collection</h1>
+        <p>අලංකාරවත් සාරි විලාසිතා දැන් එකම තැනකින්</p>
+    </div>
 
-    <section class="collections" id="collections">
-        <div class="container">
-            <h2 style="text-align: center; font-family: var(--font-heading); font-size: 2.5rem;">අලුත්ම එකතුව</h2>
-            
-            <div class="product-grid">
-                <div class="saree-card">
-                    <div class="saree-image"><img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600" alt="Soft Silk"></div>
-                    <div class="saree-details">
-                        <h3 class="saree-name">Soft Silk Saree</h3>
-                        <p class="saree-price">Rs. 4,500</p>
-                        <a href="https://wa.me/947XXXXXXXX?text=I%20want%20to%20order%20the%20Soft%20Silk%20Saree" class="whatsapp-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                        </a>
-                    </div>
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1610189012906-4f4e5e9b2e2a?w=600" alt="Saree">
+                <div class="content">
+                    <h3>Soft Silk Saree</h3>
+                    <div class="price">Rs. 4,500</div>
+                    <a href="https://wa.me/947XXXXXXXX" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
                 </div>
-
-                <div class="saree-card">
-                    <div class="saree-image"><img src="https://images.unsplash.com/photo-1610030469618-d08914619946?w=600" alt="Designer Saree"></div>
-                    <div class="saree-details">
-                        <h3 class="saree-name">Designer Party Saree</h3>
-                        <p class="saree-price">Rs. 6,200</p>
-                        <a href="https://wa.me/947XXXXXXXX?text=I%20want%20to%20order%20the%20Designer%20Saree" class="whatsapp-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                        </a>
-                    </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600" alt="Saree">
+                <div class="content">
+                    <h3>Designer Party Saree</h3>
+                    <div class="price">Rs. 6,800</div>
+                    <a href="https://wa.me/947XXXXXXXX" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Jayantha Textile. All rights reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 10px; color: #999;">Created by Janidu Jayamanna</p>
-        </div>
-    </footer>
+    </div>
 
 </body>
 </html>
